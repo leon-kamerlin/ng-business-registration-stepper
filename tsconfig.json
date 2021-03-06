@@ -14,7 +14,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "business-registration-stepper": [
+        "dist/business-registration-stepper/business-registration-stepper",
+        "dist/business-registration-stepper"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
