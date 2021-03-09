@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatHorizontalStepper, MatStep } from '@angular/material/stepper';
-import { AvailabilityFormComponent, WeekAvailability } from 'availability-form';
+import { AvailabilityFormComponent, WeekAvailability } from 'ng-availability-form';
 import { BusinessInfo } from './business-info';
 import { Business } from './business';
 import { BusinessInfoFormComponent } from './business-info-form/business-info-form.component';

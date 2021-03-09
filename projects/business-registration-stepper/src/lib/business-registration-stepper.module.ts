@@ -7,10 +7,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatStepperModule } from '@angular/material/stepper';
-import { AvailabilityFormModule } from 'availability-form';
 import { FlexModule } from '@angular/flex-layout';
 import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
 import { BusinessInfoFormModule } from './business-info-form/business-info-form.module';
+import { AvailabilityFormModule } from 'ng-availability-form';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { BusinessInfoFormModule } from './business-info-form/business-info-form.
     FlexModule,
     AvailabilityFormModule,
     MatGoogleMapsAutocompleteModule,
-    BusinessInfoFormModule,
+    BusinessInfoFormModule
   ],
   exports: [
     BusinessRegistrationStepperComponent

@@ -1,6 +1,6 @@
 {
   "name": "ng-business-registration-stepper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "peerDependencies": {
     "@angular/common": "^11.2.3",
     "@angular/core": "^11.2.3",
@@ -11,6 +11,7 @@
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
     "leon-angular-utils": "^0.0.7",
+    "ng-availability-form": "0.0.2",
     "@angular/material": "~11.2.2",
     "@angular/flex-layout": "^11.0.0-beta.33",
     "@angular-material-extensions/google-maps-autocomplete": "^5.0.0",

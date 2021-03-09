@@ -31,7 +31,7 @@
     "@angular/router": "~11.2.3",
     "@ngx-translate/core": "^13.0.0",
     "@ngx-translate/http-loader": "^6.0.0",
-    "availability-form": "0.0.1",
+    "ng-availability-form": "0.0.2",
     "leon-angular-utils": "^0.0.7",
     "ng-components-leon": "0.0.4",
     "ng-material-multilevel-menu": "^5.5.3",
