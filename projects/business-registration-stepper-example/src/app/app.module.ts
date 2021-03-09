@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { BusinessRegistrationStepperModule } from 'business-registration-stepper';
 import { AgmCoreModule } from '@agm/core';
