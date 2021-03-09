@@ -68,7 +68,10 @@
               "projects/business-registration-stepper-example/src/assets"
             ],
             "styles": [
-              "projects/business-registration-stepper-example/src/styles.scss"
+              "projects/business-registration-stepper-example/src/styles/styles.scss",
+              "projects/business-registration-stepper-example/src/styles/highlightjs/material-light.css",
+              "projects/business-registration-stepper-example/src/styles/bootstrap/bootstrap.scss",
+              "projects/business-registration-stepper-example/src/styles/primer/primer.scss"
             ],
             "scripts": []
           },

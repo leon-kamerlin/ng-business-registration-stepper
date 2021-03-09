@@ -1,0 +1,41 @@
+<mat-vertical-stepper [linear]="false" #stepper>
+
+    <mat-step #stepOne>
+
+        <ng-template matStepLabel>Info</ng-template>
+        <lib-business-info-form
+            submitText="Next"
+            [info]="formData?.info"
+            (formData)="onSubmitBusinessInfo($event)"
+            #info>
+        </lib-business-info-form>
+    </mat-step>
+
+    <mat-step #stepTwo>
+        <ng-template matStepLabel>Availability</ng-template>
+        <lib-availability-form
+            submitText="Next"
+            [showPreviousButton]="true"
+            [availability]="formData?.availability"
+            (submitted)="onSubmitAvailability($event)"
+            #availability>
+        </lib-availability-form>
+    </mat-step>
+
+    <mat-step>
+
+        <ng-template matStepLabel>Complete</ng-template>
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+            <button
+                mat-raised-button
+                color="primary" (click)="stepper.previous()">Previous
+            </button>
+            <button
+                mat-raised-button
+                color="primary" (click)="onDone()">Done
+            </button>
+        </div>
+
+    </mat-step>
+
+</mat-vertical-stepper>

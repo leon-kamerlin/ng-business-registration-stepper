@@ -1,0 +1,83 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    <div class="pb-3">
+        <h3 class="text-muted">Set the days and times when you want to regularly offer appointments on your
+            calendar.</h3>
+    </div>
+    <div fxLayout.xs="column" fxLayoutAlign="space-between center" fxLayoutGap="10px">
+
+
+        <mat-form-field fxFlex.gt-xs="33">
+            <mat-label>Select business type {{type | fieldRequired}}</mat-label>
+            <mat-select [formControl]="type">
+                <mat-option *ngFor="let businessType of businessTypes"
+                            [value]="businessType.value">{{ businessType.viewValue }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="type.errors?.required">This field is required</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field fxFlex.gt-xs="33">
+            <mat-label>Business name {{name | fieldRequired}}</mat-label>
+            <input matInput placeholder="Enter your business name" [formControl]="name">
+
+            <mat-error *ngIf="name.errors?.required">This field is required</mat-error>
+            <mat-error *ngIf="name.errors?.minlength">Business name is too short, min length
+                is {{name.errors.minlength.requiredLength}} characters
+            </mat-error>
+            <mat-error *ngIf="name.errors?.maxlength">Business name is too long, max length
+                is {{name.errors.maxlength.requiredLength}} characters
+            </mat-error>
+            <mat-error *ngIf="name.errors?.pattern && !name.errors?.maxlength && !name.errors?.minlength">Last name is
+                not valid
+            </mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field fxFlex.gt-xs="33">
+            <mat-label>Business phone number {{phoneNumber | fieldRequired}}</mat-label>
+            <input matInput placeholder="Enter your business phone number" [formControl]="phoneNumber">
+            <mat-error *ngIf="phoneNumber.errors?.required">This field is required</mat-error>
+            <mat-error *ngIf="phoneNumber.errors?.minlength">Phone number is too short, min length
+                is {{phoneNumber.errors.minlength.requiredLength}} characters
+            </mat-error>
+            <mat-error *ngIf="phoneNumber.errors?.maxlength">Phone number is too long, max length
+                is {{phoneNumber.errors.maxlength.requiredLength}} characters
+            </mat-error>
+            <mat-error
+                *ngIf="phoneNumber.errors?.pattern && !phoneNumber.errors?.maxlength && !phoneNumber.errors?.minlength">
+                Phone number is not valid
+            </mat-error>
+        </mat-form-field>
+
+
+    </div>
+
+
+    <mat-search-google-maps-autocomplete
+        #autocomplete
+        country="hr"
+        appearance="outline"
+        searchAddressLabel="Upišite svoju adresu"
+        streetNameLabel="Ulica"
+        streetNumberLabel="Broj ulice"
+        localityLabel="Mjesto"
+        postalCodeLabel="Poštanski broj"
+        readonly="true"
+        (onGermanAddressMapped)="onGermanAddressMapped($event)">
+    </mat-search-google-maps-autocomplete>
+
+
+    <div class="d-flex justify-content-end align-items-center">
+        <button
+            class="mx-3"
+            *ngIf="showPreviousButton"
+            mat-raised-button>
+            Previous
+        </button>
+        <button
+            mat-raised-button
+            color="primary"
+            [disabled]="form.invalid"
+            (click)="onSubmit(form.value)">{{submitText}}</button>
+    </div>
+</form>
